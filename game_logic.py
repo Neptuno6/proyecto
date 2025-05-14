@@ -155,3 +155,18 @@ class GameLogic:
             list: Copia de la matriz del tablero
         """
         return [row[:] for row in self.board]
+    def set_board_state(self, board, level, virus_positions):
+        """
+        Establece el estado del tablero desde datos cargados.
+        
+        Args:
+            board (list): Matriz del tablero
+            level (int): Nivel del juego
+            virus_positions (list): Lista de posiciones del virus
+        """
+        self.board = [row[:] for row in board]
+        self.level = level
+        self.virus_positions = virus_positions[:]
+        self.game_over = False
+        self.winner = None
+        self.turn = 0
