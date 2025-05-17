@@ -1,4 +1,52 @@
 import tkinter as tk
+"""
+Interfaz gráfica para el juego de Virus usando Tkinter.
+Permite al usuario interactuar con el juego, colocar barreras, avanzar turnos,
+guardar y cargar partidas, y visualizar el estado del tablero.
+"""
+"""
+    Inicializa la interfaz gráfica, crea el menú y comienza un nuevo juego.
+    Args:
+        master (tk.Tk): Ventana principal de Tkinter.
+    """
+"""
+    Inicializa la barra de menú con las opciones de Nuevo Juego, Guardar y Cargar.
+    """
+"""
+    Inicia un nuevo juego solicitando al usuario el tamaño del tablero.
+    Reinicia el estado del juego y actualiza la interfaz.
+    """
+"""
+    Crea los botones del tablero en la interfaz gráfica según el tamaño actual del juego.
+    También agrega el botón para avanzar al siguiente turno.
+    """
+"""
+    Actualiza la visualización del tablero y la información en la ventana principal,
+    mostrando el estado de cada celda y los datos del juego.
+    """
+"""
+    Maneja el evento de clic en una celda del tablero.
+    Permite colocar una barrera si es posible y muestra mensajes de error o derrota según corresponda.
+    Args:
+        i (int): Fila de la celda.
+        j (int): Columna de la celda.
+    """
+"""
+    Avanza al siguiente turno del juego.
+    Propaga el virus, verifica condiciones de victoria o derrota y actualiza la interfaz.
+    """
+"""
+    Maneja la lógica cuando el jugador gana un nivel o el juego completo.
+    Muestra mensajes de victoria y avanza de nivel o reinicia el juego.
+    """
+"""
+    Solicita al usuario un nombre de archivo y guarda el estado actual del juego.
+    Muestra un mensaje de éxito si la operación es exitosa.
+    """
+"""
+    Solicita al usuario un nombre de archivo y carga una partida guardada.
+    Actualiza la interfaz con el estado cargado y muestra un mensaje de éxito.
+    """
 from tkinter import messagebox, simpledialog
 from game_logic import GameLogic
 from file_manager import FileManager

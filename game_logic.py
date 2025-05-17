@@ -1,4 +1,31 @@
 import random
+"""
+Módulo game_logic.py
+Contiene la clase GameLogic que implementa la lógica principal de un juego de propagación de virus en un tablero cuadrado. Permite colocar barreras, propagar el virus, verificar condiciones de victoria o derrota y avanzar de nivel.
+Clases:
+    GameLogic: Gestiona el estado del juego, el tablero, la propagación del virus y la colocación de barreras.
+Métodos:
+    __init__(self, size=5)
+        Inicializa una nueva instancia del juego con un tablero de tamaño dado, nivel inicial y configuración de barreras.
+    max_barriers(self)
+        Calcula la cantidad máxima de barreras permitidas según el tamaño del tablero y el nivel actual.
+    initialize_level(self)
+        Inicializa el tablero para el nivel actual, colocando infecciones iniciales y restableciendo barreras.
+    place_barrier(self, i, j)
+        Intenta colocar una barrera en la posición (i, j). Verifica que no se creen islas inaccesibles y que haya barreras disponibles.
+    validate_no_islands(self)
+        Verifica que al colocar una barrera no se creen zonas aisladas (islas) inaccesibles para el virus.
+    spread_virus(self)
+        Propaga el virus desde las celdas infectadas a celdas adyacentes libres, si es posible.
+    check_win(self)
+        Verifica si el jugador ha ganado, es decir, si el virus no puede propagarse más.
+    check_loss(self)
+        Verifica si el jugador ha perdido, es decir, si no quedan barreras y el virus aún puede propagarse.
+    advance_level(self)
+        Avanza al siguiente nivel si es posible, reiniciando el tablero y aumentando la dificultad.
+    free_cells(self)
+        Devuelve la cantidad de celdas libres (no infectadas ni bloqueadas) en el tablero.
+"""
 
 class GameLogic:
     def __init__(self, size=5):

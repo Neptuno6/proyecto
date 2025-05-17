@@ -1,8 +1,31 @@
 import struct
+"""
+Clase utilitaria para guardar y cargar el estado del juego en archivos binarios.
+Proporciona métodos estáticos para serializar y deserializar objetos GameLogic,
+permitiendo la persistencia del progreso del juego.
+"""
+"""
+    Guarda el estado actual del juego en un archivo binario.
+    Parámetros:
+        game (GameLogic): Instancia del juego a guardar.
+        filename (str): Nombre base del archivo (sin extensión).
+    Retorna:
+        bool: True si el guardado fue exitoso, False en caso de error.
+    El método serializa el tamaño del tablero, el nivel, las barreras restantes y el estado del tablero,
+    codificando cada fila como un número en base 3 y almacenándolo en formato binario.
+    """
+"""
+    Carga el estado de un juego previamente guardado desde un archivo binario.
+    Parámetros:
+        filename (str): Nombre base del archivo (sin extensión).
+    Retorna:
+        GameLogic | None: Instancia de GameLogic restaurada desde el archivo, o None si ocurre un error.
+    El método deserializa el tamaño, nivel, barreras y el estado del tablero,
+    reconstruyendo el objeto GameLogic a partir de los datos binarios almacenados.
+    """
 from game_logic import GameLogic
 
 class FileManager:
-    @staticmethod
     def save_game(game, filename):
         try:
             with open(f"{filename}.bin", "wb") as f:
@@ -30,7 +53,6 @@ class FileManager:
             print(f"Error saving: {str(e)}")
             return False
     
-    @staticmethod
     def load_game(filename):
         try:
             with open(f"{filename}.bin", "rb") as f:
